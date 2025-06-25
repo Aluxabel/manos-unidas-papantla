@@ -1,0 +1,403 @@
+/* Variables CSS para facilitar el mantenimiento y la consistencia */
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #6c757d; /* Gris para acentos */
+    --accent-color: #28a745; /* Verde para éxito/énfasis */
+    --light-bg: #f8f9fa; /* Fondo muy claro */
+    --dark-text: #212529; /* Texto oscuro */
+    --light-text: #ffffff; /* Texto claro */
+    --border-color: #dee2e6; /* Color de borde suave */
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.7;
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces internos */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Encabezado */
+header {
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-color);
+    box-shadow: var(--shadow-light);
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Barra de Navegación */
+nav {
+    background: var(--dark-text);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Barra de navegación pegajosa */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 18px;
+}
+
+nav a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Secciones de Contenido */
+.section {
+    background: var(--light-text);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-medium);
+}
+
+.section h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.section h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-text);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.section p {
+    margin-bottom: 15px;
+}
+
+/* Imágenes */
+.section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto; /* Centrar imágenes */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.section img:hover {
+    transform: scale(1.02);
+}
+
+.logo-conalep {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-caption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-top: -15px; /* Ajuste para que esté más cerca de la imagen */
+    margin-bottom: 25px;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+table, th, td {
+    border: 1px solid var(--border-color);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+tr:nth-child(even) { /* Filas pares con fondo diferente */
+    background-color: var(--light-bg);
+}
+tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Formularios */
+form {
+    background: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"], /* Estilo para el nuevo campo de teléfono */
+form textarea {
+    width: calc(100% - 24px); /* Ajuste para padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+form input[type="submit"] {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+    background-color: #218838; /* Un poco más oscuro */
+    transform: translateY(-2px);
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+/* Mensajes del formulario (JavaScript) */
+.form-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Pie de Página */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--dark-text);
+    color: var(--light-text);
+    margin-top: 30px;
+    border-top: 5px solid var(--accent-color);
+    font-size: 0.9em;
+}
+
+/* Contenedor de Video Responsivo */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura / ancho = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Botón Regresar al Inicio */
+#scrollToTopBtn {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 30px;
+    right: 30px;
+    z-index: 99; /* Para que esté por encima de otros elementos */
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Forma redonda */
+    font-size: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividad (ejemplos) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul li {
+        display: block; /* En pantallas pequeñas, los enlaces de nav se apilan */
+        margin: 10px 0;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form textarea {
+        width: calc(100% - 20px); /* Ajuste para móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Logo del proyecto */
+.logo-proyecto {
+  max-width: 120px;
+  margin: 15px auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+
+/* Testimonios */
+blockquote {
+  background-color: #f1f1f1;
+  border-left: 6px solid var(--accent-color);
+  padding: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  font-size: 1.1em;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+}
+blockquote strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--secondary-color);
+  font-style: normal;
+}
+
+/* Enlaces del pie de página */
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer a:not(:last-child) {
+  margin-right: 10px;
+}       
